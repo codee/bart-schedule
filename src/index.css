@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.circle {
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 16px; height: 16px;
+  box-shadow: 0 0 1px #000;
+  border-radius: 50%;
+}
