@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { bindActionCreators } from 'redux';
-import { fetchStations, fetchAdvisories } from './actions';
-import { connect } from 'react-redux';
-import ServiceAdvisories from './components/service_advisories';
-import StationsSelect from './containers/stations_select';
-import StationSchedules from './containers/station_schedules';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { bindActionCreators } from "redux";
+import { fetchStations, fetchAdvisories } from "./actions";
+import { connect } from "react-redux";
+import ServiceAdvisories from "./components/service_advisories";
+import StationsSelect from "./containers/stations_select";
+import StationSchedules from "./containers/station_schedules";
 
 class App extends Component {
+  // TODO: Add state here, like which station is currently selected.
   render() {
     return (
       <div className="App">
@@ -18,7 +19,7 @@ class App extends Component {
         </header>
         <div className="container">
           <div>
-            <ServiceAdvisories advisories={ this.props.advisories } />
+            <ServiceAdvisories advisories={this.props.advisories} />
           </div>
           <div>
             <form className="">
@@ -48,4 +49,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchStations, fetchAdvisories }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
